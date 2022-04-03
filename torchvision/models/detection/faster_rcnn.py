@@ -19,7 +19,7 @@ from .generalized_rcnn import GeneralizedRCNN
 from .roi_heads import RoIHeads
 from .rpn import RPNHead, RegionProposalNetwork
 from .transform import GeneralizedRCNNTransform
-
+from .senet.se_resnet import se_resnet50
 
 __all__ = [
     "FasterRCNN",
@@ -404,7 +404,7 @@ def fasterrcnn_resnet50_fpn_SE(
     trainable_backbone_layers = _validate_trainable_layers(is_trained, trainable_backbone_layers, 5, 3)
     norm_layer = misc_nn_ops.FrozenBatchNorm2d if is_trained else nn.BatchNorm2d
 
-    backbone =  se_resnet50()
+    backbone =  se_resnet50(num_classes=num_classes, pretrained=False)
     backbone = _resnet_fpn_extractor(backbone, trainable_backbone_layers)
     model = FasterRCNN(backbone, num_classes=num_classes, **kwargs)
 
