@@ -19,7 +19,7 @@ from .generalized_rcnn import GeneralizedRCNN
 from .roi_heads import RoIHeads
 from .rpn import RPNHead, RegionProposalNetwork
 from .transform import GeneralizedRCNNTransform
-from .senet.se_resnet import se_resnet50
+from ..senet.se_resnet import se_resnet50
 
 __all__ = [
     "FasterRCNN",
