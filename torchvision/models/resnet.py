@@ -26,7 +26,7 @@ __all__ = [
     "resnet18",
     "resnet34",
     "resnet50",
-    "resnet50_SE",
+    "resnet50_SE_pretrained",
     "resnet101",
     "resnet152",
     "resnext50_32x4d",
